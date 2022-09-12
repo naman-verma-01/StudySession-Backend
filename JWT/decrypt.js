@@ -14,14 +14,12 @@ module.exports =async (token) =>
         throw new Error("Token is not Given");
 
     }
-   // const publicKey = fs.readFileSync('./public.key'); //will read the public key viewing the token
     
 
     try 
     {
         
-        const decrypt =   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)//publicKey);  //decrypting the token using the keys
-        
+        const decrypt =   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
         
 
 

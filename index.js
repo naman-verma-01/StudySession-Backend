@@ -2,13 +2,12 @@ const mongoose = require('mongoose')
 const express = require('express')
 const port = process.env.PORT || 1800;
 const app = express();
-
 const MONGODB_URI = "mongodb+srv://Naman:jqgklUCDwuEYcbDG@cluster0.pzu0fde.mongodb.net/?retryWrites=true&w=majority"//'mongodb://localhost/studySession'
 const AuthRoute = require('./Routes/AuthRoute')
 const StudySessionRoute = require('./Routes/StudySessionRoute')
-
 const {json} = require('body-parser')
 var cors = require('cors');
+
 
 app.use(json());
 app.use(cors())

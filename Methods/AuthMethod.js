@@ -1,8 +1,9 @@
 const Auth = require("../Models/Auth")
 const bcrypt = require("bcrypt")
 const verifyJWT = require("../JWT/decrypt")
-
 const generateJWT = require("../JWT/generate")
+
+
 const signup = async(email,password,userName) =>{
     let response = {}
     try {
