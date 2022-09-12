@@ -3,7 +3,7 @@ const express = require('express')
 const port = process.env.PORT || 1800;
 const app = express();
 
-const MONGODB_URI = 'mongodb://localhost/studySession'
+const MONGODB_URI = "mongodb+srv://Naman:jqgklUCDwuEYcbDG@cluster0.pzu0fde.mongodb.net/?retryWrites=true&w=majority"//'mongodb://localhost/studySession'
 const AuthRoute = require('./Routes/AuthRoute')
 const StudySessionRoute = require('./Routes/StudySessionRoute')
 
