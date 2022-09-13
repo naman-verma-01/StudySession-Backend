@@ -88,13 +88,6 @@ const registerForSession = async (id, email, userName) => {
         let check = await StudySession.findById(id)
         let data
 
-       // console.log({ userName, email }, check.regStudentDetails.includes({ userName, email }))
-       // if (check.regStudentDetails.includes({ userName, email })) {
-       //     response.status = 200,
-       //         response.data = { msg: "Already registered for Study Session" }
-       //     return response
-       // }
-
         for (var x = 0; x < check.regStudentDetails.length; x++) {
             console.log(check.regStudentDetails[x].email == email)
             if (check.regStudentDetails[x].email == email && check.regStudentDetails[x].userName == userName) {
@@ -104,7 +97,6 @@ const registerForSession = async (id, email, userName) => {
                 return response
             }
         }
-        // console.log("check",check)//,check.registeredStudents <= check.maxStudents)
 
         if (check.registeredStudents < check.maxStudents) {
             data = await StudySession.findByIdAndUpdate(id, { $push: { regStudentDetails: { email, userName } }, $inc: { registeredStudents: 1 } })
